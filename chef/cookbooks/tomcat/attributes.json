@@ -10,7 +10,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             }
         },
@@ -24,7 +24,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             }
         },
@@ -37,7 +37,7 @@
             "precedence_level": "node",
             "required": "true",
             "secret": "false",
-            "selectable": "false",
+            "selectable": "true",
             "type": "string"
         },
         "instance_dirs": {
@@ -50,7 +50,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "log_dir": {
@@ -62,7 +62,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "temp_dir": {
@@ -74,7 +74,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "webapps_dir": {
@@ -86,7 +86,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "work_dir": {
@@ -98,13 +98,13 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             }
         },
         "java": {
             "catalina_opts": {
-                "default": "false",
+                "default": "true",
                 "description": "Specifies additional options on the java command used to start Tomcat.",
                 "displayname": "Tomcat catalina_opts",
                 "hidden": "false",
@@ -115,7 +115,7 @@
                 "type": "string"
             },
             "java_opts": {
-                "default": "false",
+                "default": "true",
                 "description": "Specifies additional options for commands to start, stop and more on Tomcat.",
                 "displayname": "Tomcat java_opts",
                 "hidden": "false",
@@ -134,7 +134,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "vendor": {
@@ -146,7 +146,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "version": {
@@ -158,7 +158,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             }
         },
@@ -173,7 +173,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "gid": {
@@ -185,7 +185,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "home": {
@@ -197,7 +197,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "ldap_user": {
@@ -209,7 +209,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "name": {
@@ -221,7 +221,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "shell": {
@@ -233,7 +233,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 }
             }
@@ -248,7 +248,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "port": {
@@ -260,7 +260,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "shutdown_cmd": {
@@ -272,7 +272,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             }
         },
@@ -286,7 +286,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "name": {
@@ -298,7 +298,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "started": {
@@ -310,7 +310,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             }
         },
@@ -325,7 +325,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "c": {
@@ -337,7 +337,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "cn": {
@@ -349,7 +349,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "l": {
@@ -361,7 +361,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "o": {
@@ -373,7 +373,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "ou": {
@@ -385,7 +385,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "s": {
@@ -397,7 +397,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "validity": {
@@ -409,7 +409,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 }
             },
@@ -422,7 +422,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             },
             "keystore": {
@@ -435,7 +435,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "file": {
@@ -447,7 +447,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "password": {
@@ -459,7 +459,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "true",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "type": {
@@ -471,7 +471,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 }
             },
@@ -485,7 +485,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "max_threads": {
@@ -497,7 +497,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "protocol": {
@@ -509,7 +509,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 }
             },
@@ -522,7 +522,7 @@
                 "precedence_level": "node",
                 "required": "true",
                 "secret": "false",
-                "selectable": "false",
+                "selectable": "true",
                 "type": "string"
             }
         },
@@ -537,7 +537,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "manager-gui": {
@@ -549,7 +549,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "manager-jmx": {
@@ -561,7 +561,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "manager-script": {
@@ -573,7 +573,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "manager-status": {
@@ -585,7 +585,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 }
             },
@@ -600,7 +600,7 @@
                         "precedence_level": "node",
                         "required": "true",
                         "secret": "false",
-                        "selectable": "false",
+                        "selectable": "true",
                         "type": "string"
                     },
                     "password": {
@@ -612,7 +612,7 @@
                         "precedence_level": "node",
                         "required": "true",
                         "secret": "true",
-                        "selectable": "false",
+                        "selectable": "true",
                         "type": "string"
                     },
                     "status": {
@@ -624,7 +624,7 @@
                         "precedence_level": "node",
                         "required": "true",
                         "secret": "false",
-                        "selectable": "false",
+                        "selectable": "true",
                         "type": "string"
                     },
                     "user_roles": {
@@ -637,7 +637,7 @@
                             "precedence_level": "node",
                             "required": "true",
                             "secret": "false",
-                            "selectable": "false",
+                            "selectable": "true",
                             "type": "string"
                         },
                         "manager-gui": {
@@ -649,7 +649,7 @@
                             "precedence_level": "node",
                             "required": "true",
                             "secret": "false",
-                            "selectable": "false",
+                            "selectable": "true",
                             "type": "string"
                         },
                         "manager-jmx": {
@@ -661,7 +661,7 @@
                             "precedence_level": "node",
                             "required": "true",
                             "secret": "false",
-                            "selectable": "false",
+                            "selectable": "true",
                             "type": "string"
                         },
                         "manager-script": {
@@ -673,7 +673,7 @@
                             "precedence_level": "node",
                             "required": "true",
                             "secret": "false",
-                            "selectable": "false",
+                            "selectable": "true",
                             "type": "string"
                         },
                         "manager-status": {
@@ -685,7 +685,7 @@
                             "precedence_level": "node",
                             "required": "true",
                             "secret": "false",
-                            "selectable": "false",
+                            "selectable": "true",
                             "type": "string"
                         }
                     }
@@ -701,7 +701,7 @@
             "precedence_level": "node",
             "required": "true",
             "secret": "false",
-            "selectable": "false",
+            "selectable": "true",
             "type": "string"
         },
         "webapps": {
@@ -715,7 +715,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "docs": {
@@ -727,7 +727,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "examples": {
@@ -739,7 +739,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "host-manager": {
@@ -751,7 +751,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 },
                 "manager": {
@@ -763,7 +763,7 @@
                     "precedence_level": "node",
                     "required": "true",
                     "secret": "false",
-                    "selectable": "false",
+                    "selectable": "true",
                     "type": "string"
                 }
             }

@@ -90,12 +90,12 @@ Attributes
   <tr>
     <td><code>node['tomcat']['java']['catalina_opts']</code></td>
     <td>Specifies additional options on the java command used to start Tomcat.</td>
-    <td><code>false</code></td>
+    <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['tomcat']['java']['java_opts']</code></td>
     <td>Specifies additional options for commands to start, stop and more on Tomcat.</td>
-    <td><code>false</code></td>
+    <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['tomcat']['java']['java_sdk']</code></td>
