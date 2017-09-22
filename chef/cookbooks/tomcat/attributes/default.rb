@@ -54,12 +54,12 @@ default['ibm_internal']['vault']['item'] = 'password'
 #-------------------------------------------------------------------------------
 
 # <> Tomcat version
-# <md>attribute 'tomcat/version',fport
+# <md>attribute 'tomcat/version',
 # <md>          :displayname =>  'Tomcat install version',
 # <md>          :description => 'The version of Tomcat to be installed.',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
-# <md>          :default => '',
+# <md>          :default => '8.0.15',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
@@ -114,7 +114,8 @@ default['tomcat']['server']['port'] = '8005'
 # <md>          :default => 'SHUTDOWN',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :hidden => 'true',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['server']['shutdown_cmd'] = 'SHUTDOWN'
 
@@ -129,7 +130,8 @@ default['tomcat']['server']['shutdown_cmd'] = 'SHUTDOWN'
 # <md>          :default => 'false',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :hidden => 'true',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['server']['manage'] = 'false'
 
@@ -142,7 +144,7 @@ default['tomcat']['server']['manage'] = 'false'
 # <md>          :default => '/opt/tomcat',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['install_dir'] = '/opt/tomcat'
 
@@ -155,7 +157,7 @@ default['tomcat']['install_dir'] = '/opt/tomcat'
 # <md>          :default => '/opt/tomcat/conf',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['instance_dirs']['conf_dir'] = "#{node['tomcat']['install_dir']}/conf"
 
@@ -168,7 +170,7 @@ default['tomcat']['instance_dirs']['conf_dir'] = "#{node['tomcat']['install_dir'
 # <md>          :default => '/opt/tomcat/logs',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['instance_dirs']['log_dir'] = "#{node['tomcat']['install_dir']}/logs"
 
@@ -181,7 +183,7 @@ default['tomcat']['instance_dirs']['log_dir'] = "#{node['tomcat']['install_dir']
 # <md>          :default => '/opt/tomcat/temp',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['instance_dirs']['temp_dir'] = "#{node['tomcat']['install_dir']}/temp"
 
@@ -194,7 +196,7 @@ default['tomcat']['instance_dirs']['temp_dir'] = "#{node['tomcat']['install_dir'
 # <md>          :default => '/opt/tomcat/webapps',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['instance_dirs']['webapps_dir'] = "#{node['tomcat']['install_dir']}/webapps"
 
@@ -207,7 +209,7 @@ default['tomcat']['instance_dirs']['webapps_dir'] = "#{node['tomcat']['install_d
 # <md>          :default => '/opt/tomcat/work',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['instance_dirs']['work_dir'] = "#{node['tomcat']['install_dir']}/work"
 
@@ -220,7 +222,7 @@ default['tomcat']['instance_dirs']['work_dir'] = "#{node['tomcat']['install_dir'
 # <md>          :default => 'tomcat',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['os_users']['daemon']['name'] = 'tomcat'
 
@@ -233,7 +235,7 @@ default['tomcat']['os_users']['daemon']['name'] = 'tomcat'
 # <md>          :default => 'tomcat',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['os_users']['daemon']['gid'] = 'tomcat'
 
@@ -244,9 +246,10 @@ default['tomcat']['os_users']['daemon']['gid'] = 'tomcat'
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'false',
+# <md>          :choice => ['true', 'false'],
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['os_users']['daemon']['ldap_user'] = 'false'
 
@@ -259,7 +262,7 @@ default['tomcat']['os_users']['daemon']['ldap_user'] = 'false'
 # <md>          :default => 'tomcat daemon user',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['os_users']['daemon']['comment'] = 'tomcat daemon user'
 
@@ -272,7 +275,7 @@ default['tomcat']['os_users']['daemon']['comment'] = 'tomcat daemon user'
 # <md>          :default => '/sbin/nologin',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['os_users']['daemon']['shell'] = '/sbin/nologin'
 
@@ -285,7 +288,7 @@ default['tomcat']['os_users']['daemon']['shell'] = '/sbin/nologin'
 # <md>          :default => '/home/tomcat',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['os_users']['daemon']['home'] = '/home/' + node['tomcat']['os_users']['daemon']['name']
 
@@ -302,7 +305,7 @@ default['tomcat']['os_users']['daemon']['home'] = '/home/' + node['tomcat']['os_
 # <md>          :default => 'tomcat',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['service']['name'] = 'tomcat'
 
@@ -315,7 +318,8 @@ default['tomcat']['service']['name'] = 'tomcat'
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :hidden => 'true',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['service']['started'] = 'true'
 
@@ -328,7 +332,8 @@ default['tomcat']['service']['started'] = 'true'
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :hidden => 'true',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['service']['enabled'] = 'true'
 
@@ -343,9 +348,10 @@ default['tomcat']['service']['enabled'] = 'true'
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'true',
+# <md>          :choice => ['true', 'false'],
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['webapps']['enabled']['ROOT'] = 'true'
 
@@ -357,8 +363,9 @@ default['tomcat']['webapps']['enabled']['ROOT'] = 'true'
 # <md>          :required => 'recommended',
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
+# <md>          :choice => ['true', 'false'],
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['webapps']['enabled']['manager'] = 'true'
 
@@ -371,7 +378,8 @@ default['tomcat']['webapps']['enabled']['manager'] = 'true'
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :choice => ['true', 'false'],
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['webapps']['enabled']['host-manager'] = 'true'
 
@@ -384,7 +392,8 @@ default['tomcat']['webapps']['enabled']['host-manager'] = 'true'
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :choice => ['true', 'false'],
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['webapps']['enabled']['docs'] = 'true'
 
@@ -394,10 +403,11 @@ default['tomcat']['webapps']['enabled']['docs'] = 'true'
 # <md>          :description => 'Specifies whether to install the Tomcat webapp examples.',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :choice => ['true', 'false'],
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['webapps']['enabled']['examples'] = 'true'
 
@@ -411,10 +421,11 @@ default['tomcat']['webapps']['enabled']['examples'] = 'true'
 # <md>          :description => 'Tomcat roles: manager-gui',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :choice => ['enabled', 'disabled'],
 # <md>          :default => 'enabled',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ui_control']['all_roles']['manager-gui'] = 'enabled'
 
@@ -424,10 +435,11 @@ default['tomcat']['ui_control']['all_roles']['manager-gui'] = 'enabled'
 # <md>          :description => 'Tomcat roles: manager-script',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :choice => ['enabled', 'disabled'],
 # <md>          :default => 'enabled',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ui_control']['all_roles']['manager-script'] = 'enabled'
 
@@ -437,10 +449,11 @@ default['tomcat']['ui_control']['all_roles']['manager-script'] = 'enabled'
 # <md>          :description => 'Tomcat roles: manager-jmx',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :choice => ['enabled', 'disabled'],
 # <md>          :default => 'enabled',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ui_control']['all_roles']['manager-jmx'] = 'enabled'
 
@@ -451,9 +464,10 @@ default['tomcat']['ui_control']['all_roles']['manager-jmx'] = 'enabled'
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'enabled',
+# <md>          :choice => ['enabled', 'disabled'],
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ui_control']['all_roles']['manager-status'] = 'enabled'
 
@@ -463,10 +477,11 @@ default['tomcat']['ui_control']['all_roles']['manager-status'] = 'enabled'
 # <md>          :description => 'Tomcat roles: admin-gui',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :choice => ['enabled', 'disabled'],
 # <md>          :default => 'enabled',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ui_control']['all_roles']['admin-gui'] = 'enabled'
 
@@ -476,6 +491,7 @@ default['tomcat']['ui_control']['all_roles']['admin-gui'] = 'enabled'
 # <md>          :description => 'Specifies whether to enable the admin user in the Tomcat configuration.',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :choice => ['enabled', 'disabled'],
 # <md>          :default => 'enabled',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
@@ -505,8 +521,11 @@ default['tomcat']['ui_control']['users']['administrator']['name'] = 'admin'
 # <md>          :default => '',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
-# <md>          :secret => 'true'
+# <md>          :parm_type => 'node',
+# <md>          :secret => 'true',
+# <md>          :regex => '^[!-~]{8,32}$',
+# <md>          :regexdesc => 'Allow 8 to 32 printable ASCII characters except space.'
+
 default['tomcat']['ui_control']['users']['administrator']['password'] = ''
 
 # <> Tomcat Users - administrator roles: manager-gui
@@ -515,10 +534,11 @@ default['tomcat']['ui_control']['users']['administrator']['password'] = ''
 # <md>          :description => 'Tomcat users administrator roles: manager-gui',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :choice => ['enabled', 'disabled'],
 # <md>          :default => 'enabled',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ui_control']['users']['administrator']['user_roles']['manager-gui'] = 'enabled'
 
@@ -528,10 +548,11 @@ default['tomcat']['ui_control']['users']['administrator']['user_roles']['manager
 # <md>          :description => 'Tomcat users administrator roles: manager-script',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :choice => ['enabled', 'disabled'],
 # <md>          :default => 'enabled',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ui_control']['users']['administrator']['user_roles']['manager-script'] = 'enabled'
 
@@ -541,10 +562,11 @@ default['tomcat']['ui_control']['users']['administrator']['user_roles']['manager
 # <md>          :description => 'Tomcat users administrator roles: manager-jmx',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :choice => ['enabled', 'disabled'],
 # <md>          :default => 'enabled',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ui_control']['users']['administrator']['user_roles']['manager-jmx'] = 'enabled'
 
@@ -554,10 +576,11 @@ default['tomcat']['ui_control']['users']['administrator']['user_roles']['manager
 # <md>          :description => 'Tomcat users administrator roles: manager-status',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :choice => ['enabled', 'disabled'],
 # <md>          :default => 'enabled',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ui_control']['users']['administrator']['user_roles']['manager-status'] = 'enabled'
 
@@ -567,10 +590,11 @@ default['tomcat']['ui_control']['users']['administrator']['user_roles']['manager
 # <md>          :description => 'Tomcat users administrator roles: admin-gui',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
+# <md>          :choice => ['enabled', 'disabled'],
 # <md>          :default => 'enabled',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ui_control']['users']['administrator']['user_roles']['admin-gui'] = 'enabled'
 
@@ -587,9 +611,9 @@ default['tomcat']['ui_control']['users']['administrator']['user_roles']['admin-g
 # <md>          :default => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
-default['tomcat']['ssl']['enabled'] = 'false'
+default['tomcat']['ssl']['enabled'] = 'true'
 
 # <> Tomcat SSL port
 # <md>attribute 'tomcat/ssl/port',
@@ -612,8 +636,10 @@ default['tomcat']['ssl']['ssl_port'] = '8443'
 # <md>          :required => 'recommended',
 # <md>          :default => '200',
 # <md>          :selectable => 'true',
+# <md>          :hidden => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
+
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['options']['max_threads'] = '200'
 
@@ -624,9 +650,10 @@ default['tomcat']['ssl']['options']['max_threads'] = '200'
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'TLS',
+# <md>          :hidden => 'true',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['options']['protocol'] = 'TLS'
 
@@ -639,7 +666,8 @@ default['tomcat']['ssl']['options']['protocol'] = 'TLS'
 # <md>          :default => 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_RC4_128_SHA,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA,SSL_RSA_WITH_RC4_128_SHA',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'true',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['options']['ciphers'] = 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_RC4_128_SHA,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA,SSL_RSA_WITH_RC4_128_SHA'
 
@@ -652,7 +680,8 @@ default['tomcat']['ssl']['options']['ciphers'] = 'TLS_ECDHE_RSA_WITH_AES_128_CBC
 # <md>          :default => 'default',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'true',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['cert']['cn'] = node['fqdn']
 
@@ -665,7 +694,8 @@ default['tomcat']['ssl']['cert']['cn'] = node['fqdn']
 # <md>          :default => 'Org',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'true',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['cert']['ou'] = 'Org'
 
@@ -678,7 +708,8 @@ default['tomcat']['ssl']['cert']['ou'] = 'Org'
 # <md>          :default => 'Company',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
+# <md>          :hidden => 'true',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['cert']['o'] = 'Company'
 
@@ -691,7 +722,7 @@ default['tomcat']['ssl']['cert']['o'] = 'Company'
 # <md>          :default => 'US',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['cert']['c'] = 'US'
 
@@ -704,7 +735,7 @@ default['tomcat']['ssl']['cert']['c'] = 'US'
 # <md>          :default => 'MN',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['cert']['s'] = 'MN'
 
@@ -717,7 +748,7 @@ default['tomcat']['ssl']['cert']['s'] = 'MN'
 # <md>          :default => 'Rochester',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['cert']['l'] = 'Rochester'
 
@@ -730,7 +761,7 @@ default['tomcat']['ssl']['cert']['l'] = 'Rochester'
 # <md>          :default => '3650',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['cert']['validity'] = '3650'
 
@@ -743,7 +774,7 @@ default['tomcat']['ssl']['cert']['validity'] = '3650'
 # <md>          :default => 'tomcat',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['cert']['alias'] = 'tomcat'
 
@@ -756,7 +787,7 @@ default['tomcat']['ssl']['cert']['alias'] = 'tomcat'
 # <md>          :default => '/opt/tomcat/conf/keystore.jks',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['keystore']['file'] = "#{node['tomcat']['install_dir']}/conf/#{node['fqdn']}.jks"
 
@@ -769,7 +800,7 @@ default['tomcat']['ssl']['keystore']['file'] = "#{node['tomcat']['install_dir']}
 # <md>          :default => 'JKS',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['keystore']['type'] = 'JKS'
 
@@ -782,7 +813,7 @@ default['tomcat']['ssl']['keystore']['type'] = 'JKS'
 # <md>          :default => 'RSA',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['ssl']['keystore']['alg'] = 'RSA'
 
@@ -796,7 +827,9 @@ default['tomcat']['ssl']['keystore']['alg'] = 'RSA'
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
-# <md>          :secret => 'true'
+# <md>          :secret => 'true',
+# <md>          :regex => '^[!-~]{8,32}$',
+# <md>          :regexdesc => 'Allow 8 to 32 printable ASCII characters except space.'
 default['tomcat']['ssl']['keystore']['password'] = ''
 
 #-------------------------------------------------------------------------------
@@ -822,8 +855,8 @@ default['tomcat']['java']['version'] = '1.8.0'
 
 # <> Java flavor
 # <md>attribute 'tomcat/java/java_sdk',
-# <md>          :displayname =>  'Tomcat java_flavor',
-# <md>          :description => 'Specifies the use of a Java Development Kit or Runtime Environment.',
+# <md>          :displayname =>  'Tomcat Java Flavor',
+# <md>          :description => 'Specifies the use of a Java Development Kit (false) or Runtime Environment (true).',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'false',
@@ -835,14 +868,14 @@ default['tomcat']['java']['java_sdk'] = 'false'
 
 # <> Java vendor. Currently only openjdk is supported.
 # <md>attribute 'tomcat/java/vendor',
-# <md>          :displayname =>  'Tomcat java vendor',
+# <md>          :displayname =>  'Tomcat Java Vendor',
 # <md>          :description => 'Currently only openjdk is supported as the Tomcat java vendor.',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'openjdk',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['java']['vendor'] = 'openjdk'
 
@@ -855,7 +888,7 @@ default['tomcat']['java']['vendor'] = 'openjdk'
 # <md>          :default => '-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['java']['java_opts'] = '-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom'
 
@@ -868,6 +901,6 @@ default['tomcat']['java']['java_opts'] = '-Djava.awt.headless=true -Djava.securi
 # <md>          :default => '-Xms512M -Xmx1024M -server -XX:+UseParallelGC',
 # <md>          :selectable => 'true',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['tomcat']['java']['catalina_opts'] = '-Xms512M -Xmx1024M -server -XX:+UseParallelGC'

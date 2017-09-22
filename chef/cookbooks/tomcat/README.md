@@ -90,16 +90,16 @@ Attributes
   <tr>
     <td><code>node['tomcat']['java']['catalina_opts']</code></td>
     <td>Specifies additional options on the java command used to start Tomcat.</td>
-    <td><code>true</code></td>
+    <td><code>-Xms512M -Xmx1024M -server -XX:+UseParallelGC</code></td>
   </tr>
   <tr>
     <td><code>node['tomcat']['java']['java_opts']</code></td>
     <td>Specifies additional options for commands to start, stop and more on Tomcat.</td>
-    <td><code>true</code></td>
+    <td><code>-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom</code></td>
   </tr>
   <tr>
     <td><code>node['tomcat']['java']['java_sdk']</code></td>
-    <td>Specifies the use of a Java Development Kit or Runtime Environment.</td>
+    <td>Specifies the use of a Java Development Kit (false) or Runtime Environment (true).</td>
     <td><code>false</code></td>
   </tr>
   <tr>
@@ -325,7 +325,7 @@ Attributes
   <tr>
     <td><code>node['tomcat']['version']</code></td>
     <td>The version of Tomcat to be installed.</td>
-    <td><code></code></td>
+    <td><code>8.0.15</code></td>
   </tr>
   <tr>
     <td><code>node['tomcat']['webapps']['enabled']['ROOT']</code></td>
