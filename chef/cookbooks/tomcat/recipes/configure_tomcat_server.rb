@@ -1,5 +1,5 @@
 ################################################################################
-# Copyright IBM Corp. 2017, 2017
+# Copyright IBM Corp. 2017, 2018
 ################################################################################
 
 # <> Configure tomcat server recipe (configure_tomcat_server.rb)
@@ -18,7 +18,7 @@ tomcat_keystore 'manage SSL keystore' do
   keystore_type node['tomcat']['ssl']['keystore']['type']
   keystore_alg node['tomcat']['ssl']['keystore']['alg']
   cert_data node['tomcat']['ssl']['cert']
-  only_if { node['tomcat']['ssl']['enabled'].casecmp('true').zero? }
+  only_if { node['tomcat']['ssl']['enabled'].casecmp('true') == 0 }
 end
 
 # Create initial server.xml
@@ -41,6 +41,6 @@ template "#{node['tomcat']['instance_dirs']['conf_dir']}/server.xml" do
     :keystore => node['tomcat']['ssl']['keystore']['file'],
     :keystore_pass => keystore_pass.split('').map { |x| '&#' + x.ord.to_s + ';' }.join
   )
-  only_if { node['tomcat']['server']['manage'].casecmp('true').zero? || first_run? }
+  only_if { node['tomcat']['server']['manage'].casecmp('true') == 0 || first_run? }
   notifies :restart, "service[#{node['tomcat']['service']['name']}]" if notify_service?(node['tomcat']['install_dir'])
 end

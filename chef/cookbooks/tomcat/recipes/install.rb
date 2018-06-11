@@ -1,5 +1,5 @@
 ################################################################################
-# Copyright IBM Corp. 2017, 2017
+# Copyright IBM Corp. 2017, 2018
 ################################################################################
 
 # <> Installation recipe (install.rb)
@@ -26,21 +26,16 @@ tomcat_service = node['tomcat']['service']['name']
 instance_dirs = [
   {
     'source_path' => "#{catalina_home}/logs",
-    'dest_path' => node['tomcat']['instance_dirs']['log_dir']
-  },
+    'dest_path' => node['tomcat']['instance_dirs']['log_dir'] },
   {
     'source_path' => "#{catalina_home}/temp",
-    'dest_path' => node['tomcat']['instance_dirs']['temp_dir']
-  },
+    'dest_path' => node['tomcat']['instance_dirs']['temp_dir'] },
   {
     'source_path' => "#{catalina_home}/work",
-    'dest_path' => node['tomcat']['instance_dirs']['work_dir']
-  },
+    'dest_path' => node['tomcat']['instance_dirs']['work_dir'] },
   {
     'source_path' => "#{catalina_home}/webapps",
-    'dest_path' => node['tomcat']['instance_dirs']['webapps_dir']
-  }
-]
+    'dest_path' => node['tomcat']['instance_dirs']['webapps_dir'] } ]
 
 # Manage base directory
 subdirs, reason = subdirs_to_create(catalina_home, tomcat_user)

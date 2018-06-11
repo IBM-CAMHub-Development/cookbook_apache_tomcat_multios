@@ -2,7 +2,7 @@
 # Cookbook Name:: tomcat
 # Recipe:: configure_tomcat_users
 #
-# Copyright IBM Corp. 2017, 2017
+# Copyright IBM Corp. 2017, 2018
 
 require 'chef-vault'
 ::Chef::Recipe.send(:include, TomcatUsers)

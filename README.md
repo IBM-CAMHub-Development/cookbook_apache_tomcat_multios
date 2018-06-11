@@ -30,9 +30,8 @@ Requirements
 
 ### Platform:
 
-* Rhel6 (>= 6.5)
-* Rhel7
-* Ubuntu (>= 14.04)
+* Redhat
+* Debian
 
 ### Cookbooks:
 

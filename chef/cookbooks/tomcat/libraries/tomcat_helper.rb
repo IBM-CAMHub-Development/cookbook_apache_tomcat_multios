@@ -1,7 +1,7 @@
 # Cookbook Name:: tomcat
 # Library:: tomcat_helper
 #
-# Copyright IBM Corp. 2017, 2017
+# Copyright IBM Corp. 2017, 2018
 #
 
 # <> library: Tomcat helper

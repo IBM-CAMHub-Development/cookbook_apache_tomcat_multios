@@ -1,7 +1,7 @@
 # Cookbook Name:: tomcat
 # Recipe:: prereq_check
 #
-# Copyright IBM Corp. 2017, 2017
+# Copyright IBM Corp. 2017, 2018
 #
 
 # <> Prerequisites recipe (prereq_check.rb)
@@ -27,9 +27,12 @@ log 'Tomcat is already installed' do
   only_if { tomcat_installed?(node['tomcat']['install_dir']) }
 end
 
-unless tomcat_installed?(node['tomcat']['install_dir'])
-  if File.exist?(node['tomcat']['install_dir'])
-    raise 'Provided installation directory already exists on the macihne, please choose another'
+# 2237 - Remove directory if already exist and product not installed, we assume a previous failed install
+if File.exist?(node['tomcat']['install_dir'])
+  directory node['tomcat']['install_dir'] do
+    recursive true
+    action :delete
+    not_if { tomcat_installed?(node['tomcat']['install_dir']) }
   end
 end
 

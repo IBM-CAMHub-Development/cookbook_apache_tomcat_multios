@@ -2,10 +2,15 @@ name 'tomcat'
 maintainer 'IBM Corp'
 maintainer_email ''
 license 'Copyright IBM Corp. 2017, 2018'
+issues_url   'https://github.com/IBM-CAMHub-Open/cookbook_apache_tomcat_multios/issues'
+source_url   'https://github.com/IBM-CAMHub-Open/cookbook_apache_tomcat_multios'
+chef_version '>= 12.5' if respond_to?(:chef_version)
 description 'This cookbook installs and configures Apache Tomcat.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '1.0.2'
+version '2.0.0'
 depends 'ibm_cloud_utils'
+supports 'redhat'
+supports 'debian'
 description <<-EOH
 ## DESCRIPTION
 This cookbook installs and configures Apache Tomcat.
@@ -30,12 +35,6 @@ This cookbook installs and configures Apache Tomcat.
 ## Softare Package Repository
 REPO -> Stored in the ['ibm']['sw_repo'] attribute.
 EOH
-
-
-
-supports "RHEL6", ">= 6.5"
-supports "RHEL7"
-supports "ubuntu", ">= 14.04"
 
 attribute 'tomcat/ajp/port',
           :default => '8009',

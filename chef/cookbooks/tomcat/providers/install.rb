@@ -1,13 +1,10 @@
 #
 # Cookbook Name:: tomcat
-# Provider:: install.rb
+# Resource:: install.rb
 #
-# Copyright IBM Corp. 2017, 2017
+# Copyright IBM Corp. 2017, 2018
 #
-
 include ::TomcatHelper
-
-use_inline_resources
 
 action :install do
   ################################################################################

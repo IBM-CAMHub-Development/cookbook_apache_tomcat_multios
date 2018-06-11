@@ -1,13 +1,11 @@
 #
 # Cookbook Name:: tomcat
-# Provider:: link_dirs.rb
+# Resource:: link_dirs.rb
 #
-# Copyright IBM Corp. 2017, 2017
+# Copyright IBM Corp. 2017, 2018
 #
 
 include TomcatHelper
-
-use_inline_resources
 
 def filetype(path)
   return nil unless ::File.exist?(path)
@@ -76,7 +74,6 @@ action :link do
         end
         # remove source
         ::FileUtils.remove_entry_secure(source, :force => true)
-        new_resource.updated_by_last_action(true)
       end
     end
     action :nothing

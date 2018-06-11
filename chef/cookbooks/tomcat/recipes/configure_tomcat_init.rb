@@ -1,5 +1,5 @@
 ################################################################################
-# Copyright IBM Corp. 2017, 2017
+# Copyright IBM Corp. 2017, 2018
 ################################################################################
 
 # <> Create init script (configure_tomcat_init.rb)
@@ -34,8 +34,7 @@ template "#{catalina_base}/bin/setenv.sh" do
         :catalina_base => catalina_base,
         :tomcat_user => tomcat_user,
         :tomcat_group => tomcat_group,
-        :catalina_pid => tomcat_pidfile
-      }
+        :catalina_pid => tomcat_pidfile }
     end
   )
   notifies :restart, "service[#{tomcat_service}]" if notify_service?(catalina_home)

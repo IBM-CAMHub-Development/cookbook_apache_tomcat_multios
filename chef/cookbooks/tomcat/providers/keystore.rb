@@ -1,12 +1,9 @@
 #
 # Cookbook Name:: tomcat
-# Provider:: keystore.rb
+# Resource:: keystore.rb
 #
-# Copyright IBM Corp. 2016, 2017
+# Copyright IBM Corp. 2017, 2018
 #
-
-use_inline_resources
-
 def run_cmd(cmd)
   Mixlib::ShellOut.new(cmd).run_command.exitstatus == 0
 end
@@ -48,7 +45,6 @@ action :create do
             -storepass \'#{keystore_pass}\'"
     result = Mixlib::ShellOut.new(cmd).run_command
     raise "Keystore generation failed:\n  stdout:\n#{result.stdout}\n  stderr:\n#{result.stderr}" unless result.exitstatus == 0
-    new_resource.updated_by_last_action(true) 
     file keystore do
       mode '0640'
       owner owner

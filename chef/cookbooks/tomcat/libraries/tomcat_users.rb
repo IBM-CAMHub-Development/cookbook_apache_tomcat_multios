@@ -1,7 +1,7 @@
 # Cookbook Name:: tomcat
 # Library:: tomcat_users
 #
-# Copyright IBM Corp. 2017, 2017
+# Copyright IBM Corp. 2017, 2018
 #
 
 # <> library: Tomcat users
@@ -69,8 +69,7 @@ module TomcatUsers
         users_enabled[user] = {
           'name' => data['name'],
           'password' => hash_pwd(data['password']),
-          'user_roles' => my_roles
-        }
+          'user_roles' => my_roles }
       end
       users_enabled
     end

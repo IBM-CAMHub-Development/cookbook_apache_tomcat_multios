@@ -1,13 +1,9 @@
 #
 # Cookbook Name:: tomcat
-# Provider:: java.rb
+# Resource:: java.rb
 #
-# Copyright IBM Corp. 2017, 2017
+# Copyright IBM Corp. 2017, 2018
 #
-
-# include TomcatHelper
-
-use_inline_resources
 
 # TODO: Update for IBM and Oracle
 supported_vendors = ['openjdk'] # , 'ibm', 'oracle']
@@ -56,7 +52,6 @@ action :upgrade do
     package java_package do
       action :upgrade
     end
-  when 'ibm'
-  when 'oracle'
   end
 end
+
